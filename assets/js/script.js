@@ -1,11 +1,11 @@
 //Wait for the page to load before running the game
 //Get the button elements and add listeners to them
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let buttons = document.getElementsByTagName('button');
 
     for (let button of buttons) {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             if (this.getAttribute('data-type') === 'submit') {
                 checkAnswer();
             } else {
@@ -45,9 +45,12 @@ function checkAnswer() {
     let isCorrect = userAnswer === calculatedAnswer[0];
 
     if (isCorrect) {
-        alert('Hey! You got it right! :)');
+        let score = document.getElementById('score');
+        score.innerText = parseInt(score.innerText) + 1;
     } else {
         alert(`Awwww...  you answered ${userAnswer}. The correct answer is ${calculatedAnswer[0]}!`);
+        let incorrect = document.getElementById('incorrect');
+        incorrect.innerText = parseInt(incorrect.innerText) + 1;
     }
 
     runGame(calculatedAnswer[1]);
