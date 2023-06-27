@@ -33,6 +33,7 @@ function runGame(gameType) {
         num2 = Math.floor(Math.random() * num1) + 1;
         displaySubtractQuestion(num1, num2);
     } else if (gameType === 'multiply') {
+        num2 = Math.floor(Math.random() * 10) + 1;
         displayMultiplyQuestion(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
