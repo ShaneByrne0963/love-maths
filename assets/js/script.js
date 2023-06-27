@@ -30,7 +30,6 @@ function runGame(gameType) {
     if (gameType === 'addition') {
         displayAdditionQuestion(num1, num2);
     } else if (gameType === 'subtract') {
-        num2 = Math.floor(Math.random() * num1) + 1;
         displaySubtractQuestion(num1, num2);
     } else if (gameType === 'multiply') {
         num2 = Math.floor(Math.random() * 10) + 1;
@@ -98,8 +97,8 @@ function displayAdditionQuestion(operand1, operand2) {
 }
 
 function displaySubtractQuestion(operand1, operand2) {
-    document.getElementById('operand1').innerHTML = operand1;
-    document.getElementById('operand2').innerHTML = operand2;
+    document.getElementById('operand1').innerHTML = operand1 > operand2 ? operand1 : operand2;
+    document.getElementById('operand2').innerHTML = operand1 > operand2 ? operand2 : operand1;
     document.getElementById('operator').innerHTML = '-';
 }
 
