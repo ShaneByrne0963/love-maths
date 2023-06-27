@@ -30,6 +30,7 @@ function runGame(gameType) {
     if (gameType === 'addition') {
         displayAdditionQuestion(num1, num2);
     } else if (gameType === 'subtract') {
+        num2 = Math.floor(Math.random() * num1) + 1;
         displaySubtractQuestion(num1, num2);
     } else if (gameType === 'multiply') {
         displayMultiplyQuestion(num1, num2);
